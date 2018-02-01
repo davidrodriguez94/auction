@@ -116,4 +116,17 @@ public class Auction
             }
         }
     }
+    
+    public ArrayList<Lot> getUnsold()
+    {
+        ArrayList <Lot> unsold = new ArrayList<Lot>();
+        if(0 < lots.size()){
+            for(Lot lote : lots){
+                if(lote.getHighestBid() == null){
+                    unsold.add(new Lot(lote.getNumber(),lote.getDescription()));
+                }
+            }
+        }
+        return unsold;
+    }
 }
